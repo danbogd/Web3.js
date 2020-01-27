@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Interface</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    
+
+</head>
+
+<img src="osinfo.jpg">
+
+<body>
+    <div class="container">
+        
+        
+        <h1>API for Data storage Smart-contract</h1>
+
+        <h2 id="i"></h2>
+
+        <label for="name" class="col-lg-2 control-label">Период в UNIX формате</label>
+        <input id="time" type="text" placeholder="Введите дату в UNIX формате">
+
+        <label for="name" class="col-lg-2 control-label">Хеш-сумма</label>
+        <input id="hash" type="text" placeholder="Введите hash">
+    
+
+
+<hr>
+<button id="button1">Чтение</button>
+<button id="button2">Запись</button>
+
+
+<p><i><b>Дополнительная информация:</b></i></p>
+<p><i>Баланс кошелька <span id="balance"></span> ETH</i></p>
+<p><i>Адрес кошелька <span id="account"></span></i></p>
+<p><i>Адрес контракта в сети Ethereum <span id="contractAddress"></span></i></p>
+    
+
+    </div>
+
+
+<script src ="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src = "web3.js"></script>
+
+<script src = "Recieve.js"></script>
+<script src = "ethereumjs-tx-1.3.3.min.js"></script> 
+<script src = "Send.js"></script> 
+<script src = "account.js"></script>  
+
+
+</body>
+</html>
