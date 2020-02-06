@@ -163,7 +163,7 @@ console.log('typeof ethereumjs.Buffer:',        (typeof ethereumjs.Buffer))
 console.log('typeof ethereumjs.Buffer.Buffer:', (typeof ethereumjs.Buffer.Buffer))
 
 //TODO убрать ключи!!!
-  let privateKey = new ethereumjs.Buffer.Buffer('PRIVATE KEY', 'hex')
+  let privateKey = new ethereumjs.Buffer.Buffer('', 'hex')
   
 web3.eth.getTransactionCount(account1, (err, txCount) => {
 

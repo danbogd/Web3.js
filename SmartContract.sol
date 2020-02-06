@@ -78,12 +78,15 @@ contract Base is Haltable {
     // unix time => hash of base
     mapping (uint => string) public hashBase;
 
+    //event in blockchain after write operation
+    event Write(uint date, string hash);
 
     // add to blockchain 
     // @param _date - date in unix format
     // @param _hash - keccak256 from base for some period 
-    function SetToBase(uint _date, string memory _hesh) public onlyOwner stopIfHalted {
-        hashBase[_date] = _hesh;
+    function WriteToBase(uint _date, string memory _hash) public onlyOwner stopIfHalted {
+        hashBase[_date] = _hash;
+        emit Write(_date, _hash);
     }
 
     // check for data changes
@@ -92,4 +95,10 @@ contract Base is Haltable {
         return hashBase[_date];
     }
 
+    //  OPTIONAL
+    // converts hash string to bytes (need for optimisation)
+    function string_tobytes( string memory _hash) internal pure returns (bytes memory){
+    bytes memory hash = bytes(_hash);
+        return hash;
+    }
 }
