@@ -36,7 +36,6 @@ button {
     color:  #f11c0b;
     font-size: 12px;
     padding: 4px 12px;
-
 }
 
 span {
@@ -46,4 +45,19 @@ span {
 #writeCount{
 font-size: 20px;
 color: #FF0000;    
+}
+
+.blink {
+  -webkit-animation: blink1 3s linear infinite;
+  animation: blink1 3s linear infinite;
+}
+@-webkit-keyframes blink1 {
+  0% { color: rgba(34, 34, 34, 1); }
+  50% { color: rgba(34, 34, 34, 0); }
+  100% { color: rgba(34, 34, 34, 1); }
+}
+@keyframes blink1 {
+  0% { color: rgba(34, 34, 34, 1); }
+  50% { color: rgba(34, 34, 34, 0); }
+  100% { color: rgba(34, 34, 34, 1); }
 }

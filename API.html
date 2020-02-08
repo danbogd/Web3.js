@@ -7,8 +7,19 @@
     <title>Interface</title>
 
     <link rel="stylesheet" type="text/css" href="main.css">
+    <!-- <script src ="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+    $( document ).ready(function(){
+      $( ".first" ).click(function(){ // задаем функцию при нажатиии на элемент с классом first
+        $( ".first" ).fadeOut()// плавно изменяя прозрачность скрываем все элементы класса
+              .delay( 10000 ) // устанавливаем задержку 10000 миллисекунд 
+              .fadeIn(); // плавно изменяя прозрачность отображаем все элементы класса 
+      });
+      
+    });
 
-    
+    </script>
 
 </head>
 
@@ -34,9 +45,14 @@
 
 
         <hr>
-        <p><i>Внимание! Интервал записи: 5 секунд.</i></p>
+        <p class = "blink">Внимание! Интервал записи: 10 секунд.</p>
+
+        
+
+        </script>
+
         <button id="button1">Чтение</button>
-        <button id="button2">Запись</button>
+        <button id="button2" class = "first">Запись</button>
         
 
 
@@ -53,7 +69,7 @@
     </div>
 
 
-        <script src ="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        
         <script src = "web3.js"></script>
 
         <script src = "Recieve.js"></script>
