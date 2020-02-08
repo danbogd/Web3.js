@@ -1,7 +1,7 @@
-// deploy 0,000569 eth ~0.09 USD
+// deploy 0,00063 eth ~0.09 USD
 // operation 0,000086 eth ~ 0.014 USD
 
-// https://rinkeby.etherscan.io/address/0xA7952c5097BA08891C2Dd963050C7B2465355AB1#readContract
+// Contract 0x9B8B3768294f74e2F41DCd4d6a92815E450a4C78
 
 pragma solidity ^0.5.9;
 
@@ -75,17 +75,26 @@ contract Haltable is Ownable {
     
 contract Base is Haltable { 
     
-    // unix time => hash of base
+    // unix time => hash of base (mapping key in solidity is encoded on 32 bytes, so there is 2**(256) possible key)
     mapping (uint => string) public hashBase;
 
     //event in blockchain after write operation
     event Write(uint date, string hash);
+
+    // the record count  
+    uint public counter;
+   
+    //  Calculate the length of hashBase
+    function GetCounter() public view returns (uint){
+      return counter;
+    } 
 
     // add to blockchain 
     // @param _date - date in unix format
     // @param _hash - keccak256 from base for some period 
     function WriteToBase(uint _date, string memory _hash) public onlyOwner stopIfHalted {
         hashBase[_date] = _hash;
+        counter++;
         emit Write(_date, _hash);
     }
 

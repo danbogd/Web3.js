@@ -31,3 +31,19 @@ button {
     background-color:#fff;
     margin: 1em 0;
 }
+
+.button {
+    color:  #f11c0b;
+    font-size: 12px;
+    padding: 4px 12px;
+
+}
+
+span {
+ margin: 12px;   
+}
+
+#writeCount{
+font-size: 20px;
+color: #FF0000;    
+}
