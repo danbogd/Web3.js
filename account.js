@@ -1,4 +1,7 @@
-var web3 = new Web3('https://rinkeby.infura.io/metamask');
+
+
+var web3 = new Web3('https://rinkeby.infura.io/v3/fbc90aabf5d547249a4eb9fe75db634c');
+console.log(web3);
 
 const abi = [
 	{
@@ -197,13 +200,17 @@ const abi = [
 ];
  
 
-const contractAddress = '0x9B8B3768294f74e2F41DCd4d6a92815E450a4C78'
+const contractAddress = '0x60C2218817DEEd3F6888879A68e53B3815275EA8'
 const contract = new web3.eth.Contract(abi, contractAddress)
 
-const myaddress = '0xa86051704B7346c017DdE487cFDcF42968C96Ebf'; //Rinkeby
+const myaddress = '0x83109c085d5558F3C0481458caD0977563a49982'; //Rinkeby
 
 
-web3.eth.getBalance(myaddress, (err, wei) => { balance = web3.utils.fromWei(wei, 'ether');
+
+web3.eth.getBalance(myaddress, (err, wei) => { 
+
+balance = web3.utils.fromWei(wei, 'ether');
+
 
 document.getElementById('balance').textContent = balance;
 document.getElementById('contractAddress').textContent = contractAddress;

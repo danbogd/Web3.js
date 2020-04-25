@@ -4,7 +4,7 @@ $("#button2").click(function() {
 
 //setTimeout("alert('Boom!');", 10000);
 
-var web3 = new Web3('https://rinkeby.infura.io/metamask')
+var web3 = new Web3('https://rinkeby.infura.io/v3/fbc90aabf5d547249a4eb9fe75db634c');
 
 const abi = [
   {
@@ -204,9 +204,9 @@ const abi = [
     
     
 
-const contractAddress = '0x9B8B3768294f74e2F41DCd4d6a92815E450a4C78'
+const contractAddress = '0x60C2218817DEEd3F6888879A68e53B3815275EA8'
 const contract = new web3.eth.Contract(abi, contractAddress)
-const account1 = '0xa86051704B7346c017DdE487cFDcF42968C96Ebf' // Your account address 
+const account1 = '0x83109c085d5558F3C0481458caD0977563a49982' // Your account address 
 
 
 console.log('typeof ethereumjs:',               (typeof ethereumjs))
@@ -218,14 +218,15 @@ console.log('typeof ethereumjs.Buffer:',        (typeof ethereumjs.Buffer))
 console.log('typeof ethereumjs.Buffer.Buffer:', (typeof ethereumjs.Buffer.Buffer))
 
 //TODO убрать ключи!!!
-  let privateKey = new ethereumjs.Buffer.Buffer('305d2ef40b5105f0324025d8b78eb9c803d4167cdbbacdf966f1c730b373401e', 'hex')
-
+  let privateKey = new ethereumjs.Buffer.Buffer('6321d57dce8ffa92df473621158009f7212d679f074670cc9fac34ebe5d4a738', 'hex')
+                                                 
 
   
 web3.eth.getTransactionCount(account1, (err, txCount) => {
 
   let txParams = {
     nonce: web3.utils.toHex(txCount),
+    //nonce: accountNonce,
     gasPrice: web3.utils.toHex(web3.utils.toWei('20', 'gwei')), 
     gasLimit: web3.utils.toHex(800000),
     to:       contractAddress, 

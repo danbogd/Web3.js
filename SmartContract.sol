@@ -1,7 +1,7 @@
 // deploy 0,00063 eth ~0.09 USD
 // operation 0,000086 eth ~ 0.014 USD
 
-// Contract 0x9B8B3768294f74e2F41DCd4d6a92815E450a4C78
+// Contract 0x60C2218817DEEd3F6888879A68e53B3815275EA8 // Rynkeby net
 
 pragma solidity ^0.5.9;
 
