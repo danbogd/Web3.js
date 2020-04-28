@@ -4,6 +4,16 @@ $("#button2").click(function() {
 
 //setTimeout("alert('Boom!');", 10000);
 
+const options = {
+  // Enable auto reconnection
+  reconnect: {
+      auto: true,
+      delay: 5000, // ms
+      maxAttempts: 5,
+      onTimeout: false
+  }
+};
+
 var web3 = new Web3('https://rinkeby.infura.io/v3/fbc90aabf5d547249a4eb9fe75db634c');
 
 const abi = [
